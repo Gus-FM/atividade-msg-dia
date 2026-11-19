@@ -1,0 +1,32 @@
+<%- include('./partials/header'); %>
+<div class="container d-flex min-vh-100">
+  <div class="row justify-content-center align-self-center w-100">
+    <div class="col-md-6">
+      <div class="card shadow">
+        <div class="card-body">
+          <h4 class="card-title mb-3">Mensagem do Dia</h4>
+
+          <% if (typeof erro !== 'undefined') { %>
+            <div class="alert alert-danger"><%= erro %></div>
+          <% } else if (quotes.length === 0) { %>
+            <div class="alert alert-warning">Nenhuma mensagem encontrada para "<%= termo %>".</div>
+          <% } else { %>
+            <% quotes.forEach(function (quote) { %>
+              <figure class="mb-4">
+                <blockquote class="blockquote">
+                  <p>"<%= quote %>"</p>
+                </blockquote>
+                <figcaption class="blockquote-footer">Ron Swanson</figcaption>
+              </figure>
+            <% }) %>
+          <% } %>
+
+          <form method="GET" action="/">
+            <button type="submit" class="btn btn-secondary w-100">Nova mensagem</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('./partials/footer'); %>

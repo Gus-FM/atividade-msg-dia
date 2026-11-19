@@ -1,0 +1,31 @@
+<%- include('./partials/header'); %>
+<div class="container d-flex min-vh-100">
+  <div class="row justify-content-center align-self-center w-100">
+    <div class="col-md-6">
+      <div class="card shadow">
+        <div class="card-body">
+          <h4 class="card-title mb-1">Mensagem do Dia</h4>
+          <p class="text-muted mb-4">Receba a sabedoria de Ron Swanson.</p>
+          <form method="POST" action="/mensagem">
+            <div class="mb-3">
+              <label for="quantidade" class="form-label">Quantidade de mensagens</label>
+              <select class="form-select" id="quantidade" name="quantidade">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="termo" class="form-label">Palavra-chave (opcional, em inglês)</label>
+              <input type="text" class="form-control" id="termo" name="termo" placeholder="Ex.: bacon, work, fish" />
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Ver mensagem do dia</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('./partials/footer'); %>
